@@ -41,7 +41,7 @@ sleep 8
 
 # Set multi_windows property
 echo "Setting multi_windows property..."
-sudo waydroid prop set persist.waydroid.multi_windows true
+waydroid prop set persist.waydroid.multi_windows true
 
 echo "Waydroid has been reset successfully."
 echo "Please visit the following URL to register your Android ID: https://www.google.com/android/uncertified"
