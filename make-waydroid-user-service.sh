@@ -1,3 +1,6 @@
+##################################################################################
+##### WILL NOT WORK UNLESS: waydroid prop set persist.waydroid.multi_windows flase
+##################################################################################
 # Create the service file
 cat << EOF > "$SERVICE_PATH"
 [Unit]
