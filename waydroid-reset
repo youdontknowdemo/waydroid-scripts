@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define URL of the System and Vendor OTAs
+SYSTEM_OTA_URL="https://ota.waydro.id/system"
+VENDOR_OTA_URL="https://ota.waydro.id/vendor"
+
+# System type
+SYSTEM_TYPE="GAPPS"
+
+# Stop waydroid-container.service
+echo "Stopping waydroid-container.service..."
+sudo systemctl stop waydroid-container.service
+
+# Clean up directories and files
+echo "Cleaning up Waydroid..."
+sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
+
+# Initialize Waydroid with the OTA images and the specified system type
+echo "Initializing Waydroid..."
+sudo waydroid init -f -c $SYSTEM_OTA_URL -v $VENDOR_OTA_URL -s $SYSTEM_TYPE
+
+# Start the service again
+echo "Starting waydroid-container.service..."
+sudo systemctl start waydroid-container.service
+
+echo "Waydroid has been reset successfully."
