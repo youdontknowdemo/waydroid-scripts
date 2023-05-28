@@ -21,10 +21,9 @@ Description=Waydroid Service
 After=network.target
 
 [Service]
-ExecStart=/bin/bash -c 'while pgrep -x "waydroid.com.google.android.apps.youtube.kids" >/dev/null; do sleep 3; done'
-ExecStartPost=-/bin/bash -c 'systemd-run --user --scope /usr/bin/waydroid app launch com.google.android.apps.youtube.kids'
+ExecStart=/bin/bash -c 'systemd-run --user --scope /usr/bin/waydroid show-full-ui'
 Restart=always
-RestartSec=3
+RestartSec=8
 
 [Install]
 WantedBy=default.target
