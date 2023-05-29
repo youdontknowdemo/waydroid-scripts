@@ -1,7 +1,4 @@
 #!/bin/bash
-##################################################################################
-##### WILL NOT WORK UNLESS: waydroid prop set persist.waydroid.multi_windows flase
-##################################################################################
 
 # Variables
 WAYDROID_SERVICE_NAME="waydroid-user"
@@ -18,7 +15,9 @@ mkdir -p "$SERVICE_DIR"
 cat << EOF > "$SERVICE_PATH"
 [Unit]
 Description=Waydroid Service
-After=network.target
+After=waydroid-containter.service
+Before=waydroid-youtube.service
+Before=waydroid-ytkids.service
 
 [Service]
 ExecStart=/bin/bash -c 'systemd-run --user --scope /usr/bin/waydroid show-full-ui'
