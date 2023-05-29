@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Stop and disable the service
 systemctl --user stop "waydroid-ytkids.service"
 systemctl --user disable "waydroid-ytkids.service"
