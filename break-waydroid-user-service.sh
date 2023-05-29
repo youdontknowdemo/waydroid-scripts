@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Variables
-WAYDROID_SERVICE_NAME="waydroid-user"
-SERVICE_FILE="waydroid-user.service"
-SERVICE_DIR="/home/view/.config/systemd/user"
-SERVICE_PATH="/home/view/.config/systemd/user/waydroid-user.service"
-
 # Stop and disable the service
 systemctl --user stop "waydroid-user.service"
 systemctl --user disable "waydroid-user.service"
