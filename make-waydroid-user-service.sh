@@ -18,10 +18,10 @@ Before=waydroid-youtube.service
 Before=waydroid-ytkids.service
 
 [Service]
-User=$(whoami)
-Group=$(whoami)
-ExecStart=/bin/bash -c 'systemd-run --user --scope /usr/bin/waydroid show-full-ui'
-Restart=always
+Type=forking
+ExecStart=/bin/bash -c '/usr/bin/waydroid show-full-ui'
+ExecStop=/bin/bash -c '/usr/bin/waydroid session stop'
+Restart=on-failure
 RestartSec=8
 
 [Install]
