@@ -2,8 +2,6 @@
 
 # Variables
 WAYDROID_SERVICE_NAME="waydroid-user"
-WAYDROID_BINARY_PATH="/usr/bin/waydroid"
-WAYDROID_OPTIONS="session start"
 SERVICE_FILE="$WAYDROID_SERVICE_NAME.service"
 SERVICE_DIR="$HOME/.config/systemd/user"
 SERVICE_PATH="$SERVICE_DIR/$SERVICE_FILE"
