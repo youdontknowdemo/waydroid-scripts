@@ -16,6 +16,8 @@ Description=Waydroid Service
 After=waydroid-user.service
 
 [Service]
+User=$(whoami)
+Group=$(whoami)
 Type=forking
 ExecStart=/bin/bash -c '/usr/bin/waydroid app launch com.google.android.youtube'
 Restart=always
