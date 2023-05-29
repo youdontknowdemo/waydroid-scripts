@@ -1,0 +1,1 @@
+The waydroid-user service starts first, and make a user side full-ui session after the waydroid-container is automaticlly loaded system side. Then, to use an app of your choosing, edit a make and break shell changing the app name to that of your app. And, edit make-waydroid-user-service to add a Before=clause to your chosen app's service.
