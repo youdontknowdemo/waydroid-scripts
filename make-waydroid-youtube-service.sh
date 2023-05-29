@@ -16,11 +16,10 @@ Description=Waydroid Service
 After=waydroid-user.service
 
 [Service]
-User=$(whoami)
-Group=$(whoami)
 Type=forking
 ExecStart=/bin/bash -c '/usr/bin/waydroid app launch com.google.android.youtube'
-Restart=always
+ExecStop=/bin/bash -c '/usr/bin/waydroid session stop'
+Restart=on-failure
 RestartSec=8
 
 [Install]
