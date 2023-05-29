@@ -18,6 +18,8 @@ Before=waydroid-youtube.service
 Before=waydroid-ytkids.service
 
 [Service]
+User=$(whoami)
+Group=$(whoami)
 ExecStart=/bin/bash -c 'systemd-run --user --scope /usr/bin/waydroid show-full-ui'
 Restart=always
 RestartSec=8
