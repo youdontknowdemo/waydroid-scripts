@@ -18,7 +18,7 @@ sudo tee "$RUNTIME_SHELL_PATH" > /dev/null << 'EOF'
 # Process names
 process_name1="waydroid"
 process_name2="surfaceflinger"
-process_name2="ps.youtube.kids"
+process_name3="ps.youtube.kids"
 
 # Loop indefinitely
 while true; do
@@ -40,7 +40,7 @@ while true; do
         )
 
     # Process "surfaceflinger" is found, but "ps.youtube.kids" is not found
-    elif [[ $is_running2 -eq 0 && $is_running2 -ne 0 ]]; then
+    elif [[ $is_running2 -eq 0 && $is_running3 -ne 0 ]]; then
 
         (
         echo '"surfaceflinger" is found, but "ps.youtube.kids" is not found'
@@ -50,11 +50,11 @@ while true; do
         exit
         )
 
-    # Both "waydroid" and "android.google" are found
-    elif [[ $is_running1 -eq 0 && $is_running2 -eq 0 ]]; then
+    # Both "surfaceflinger" and "android.google" are found
+    elif [[ $is_running2 -eq 0 && $is_running3 -eq 0 ]]; then
 
         (
-        echo "Running subshell B for when both processes are running."
+        echo "Running subshell C for when both processes are running."
         # Your subshell commands here (for when both processes are running)
         (gtk-launch waydroid.com.google.android.apps.youtube.kids.desktop)
         (gdbus call --session --dest org.gnome.Shell --object-path /de/lucaswerkmeister/ActivateWindowByTitle --method de.lucaswerkmeister.ActivateWindowByTitle.activateBySubstring 'YT Kids') > /dev/null 2>&1 &
