@@ -78,6 +78,9 @@ while true; do
 done	
 EOF
 
+# Make runtime shell script executable.
+sudo chmod 0755 /usr/local/bin/waydroid-youtube.sh
+
 # Create the service file
 cat << EOF > "$SERVICE_PATH"
 [Unit]
