@@ -183,9 +183,3 @@ systemctl --user daemon-reload > /dev/null 2>&1 &
 
 # Enable and start the service
 systemctl --user enable --now "$WAYDROID_SERVICE_NAME" > /dev/null 2>&1 &
-
-# Reload the systemd manager configuration
-systemctl --user daemon-reload > /dev/null 2>&1 &
-
-# Enable and start the service
-systemctl --user enable --now "$WAYDROID_SERVICE_NAME" > /dev/null 2>&1 &
