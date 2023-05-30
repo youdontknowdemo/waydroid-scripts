@@ -183,18 +183,6 @@ systemctl --user daemon-reload > /dev/null 2>&1 &
 
 # Enable and start the service
 systemctl --user enable --now "$WAYDROID_SERVICE_NAME" > /dev/null 2>&1 &
-After=waydroid-container.service
-
-[Service]
-TimeoutStartSec=666
-Type=forking
-ExecStart=/bin/bash -c '/usr/local/bin/waydroid-youtube.sh'
-Restart=always
-RestartSec=8
-
-[Install]
-WantedBy=default.target
-EOF
 
 # Reload the systemd manager configuration
 systemctl --user daemon-reload > /dev/null 2>&1 &
