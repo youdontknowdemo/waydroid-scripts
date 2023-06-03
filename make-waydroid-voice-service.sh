@@ -45,7 +45,7 @@ while true; do
         (
         echo '"surfaceflinger" is found, but "pps.googlevoice" is not found'
         # Your subshell commands here (for when "surfaceflinger" is found, but "pps.googlevoice" is not found)
-        (gtk-launch com.google.android.apps.googlevoice)
+        (gtk-launch waydroid.com.google.android.apps.googlevoice.desktop)
         sleep 60
         exit
         )
@@ -56,7 +56,7 @@ while true; do
         (
         echo "Running subshell C for when both processes are running."
         # Your subshell commands here (for when both processes are running)
-        (gtk-launch com.google.android.apps.googlevoice)
+        (gtk-launch waydroid.com.google.android.apps.googlevoice.desktop)
         (gdbus call --session --dest org.gnome.Shell --object-path /de/lucaswerkmeister/ActivateWindowByTitle --method de.lucaswerkmeister.ActivateWindowByTitle.activateBySubstring 'Voice') > /dev/null 2>&1 &
         sleep 3
         exit
