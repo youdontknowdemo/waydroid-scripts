@@ -26,7 +26,7 @@ while true; do
     # Check if processes are running
     is_running1=$(pgrep -x "$process_name1" > /dev/null; echo $?)
     is_running2=$(pgrep -x "$process_name2" > /dev/null; echo $?)
-    is_running3=$(pgrep -x "$process_name2" > /dev/null; echo $?)
+    is_running3=$(pgrep -x "$process_name3" > /dev/null; echo $?)
 
     # Process "waydroid-container" is found, but "surfaceflinger" is not found
     if [[ $is_running1 -eq 0 && $is_running2 -ne 0 ]]; then
